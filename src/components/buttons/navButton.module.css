@@ -1,0 +1,13 @@
+.mainNavBtn {
+    width: 240px;
+    height: 100px;
+    background-color: olive;
+    color: white;
+}
+
+.secNavBtn {
+    width: 240px;
+    height: 100px;
+    background-color: darkslategray;
+    color: white;
+}
