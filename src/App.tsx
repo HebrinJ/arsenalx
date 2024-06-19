@@ -1,15 +1,16 @@
-import React from 'react';
-import style from './App.module.css';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/header/header';
-import { NavPanel } from './components/navPanel/navPanel';
+import MainStruct from './components/mainStruct/mainStruct';
+import MainContent from './components/mainContent/mainContent';
 
-function App() {
+export default function App() {
   return (
-    <div className={style.background}>
-      <Header/>
-      <NavPanel />
-    </div>
+    <>
+      <Routes>
+        <Route path={'/'} element={<MainStruct />}>
+          <Route path={'/main'} element={<MainContent />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
-
-export default App;
