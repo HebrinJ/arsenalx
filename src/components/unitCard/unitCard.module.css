@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    border-radius: 20px;
+    outline: 1px solid #333;
+    outline-offset: -5px;
+    box-sizing: border-box;    
+}
+
+.image {
+    width: 250px;
+    height: 100px;
+    object-fit: contain;
+    padding: 15px 15px 0;
+}
+
+.label {
+    margin: 0;
+    text-align: center;
+}
+/* .decorate {
+    margin: 5px;
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 20px;
+} */
