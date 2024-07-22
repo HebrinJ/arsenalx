@@ -1,7 +1,8 @@
 import style from './navButton.module.css'
 import NavButton from './navButton';
 import { TBtnProps } from './types';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 type TDDBtnProps = {
     text: string,
@@ -10,7 +11,8 @@ type TDDBtnProps = {
 
 export default function DropDownBtn({ text, btnsArray }: TDDBtnProps): JSX.Element {
 
-    const [dropState, setDropState] = useState({ open: false });
+    const [dropState, setDropState] = useState({ open: false }); 
+    const containerRef = useRef(null);
 
     function clickHandler() { 
         if(btnsArray.length <= 0) return;
@@ -20,16 +22,31 @@ export default function DropDownBtn({ text, btnsArray }: TDDBtnProps): JSX.Eleme
 
     return (
         <div>
-            <button type="button" className={style.mainNavBtn} onClick={clickHandler}>{text}</button>
-            { dropState.open && <div>
-                <ul className={style.list}>
-                    { btnsArray.map((item) => {
-                        return <li className={style.listElem}>
-                                    <NavButton text={item.text} target={item.target} type={item.type} />
-                                </li>
-                    }) }
-                </ul>
-            </div>}
+            <button type="button" className={style.mainNavBtn} onClick={clickHandler}>{text}</button>            
+            <CSSTransition 
+                in={dropState.open}
+                classNames={{ 
+                    enter: style.containerEnter,
+                    enterActive: style.containerEnterActive,
+                    enterDone: style.containerEnterDone,
+                    exit: style.containerExit,
+                    exitActive: style.containerExitActive,
+                    exitDone: style.containerExitDone,
+                }}
+                nodeRef={containerRef}
+                timeout={700} 
+                mountOnEnter 
+                unmountOnExit>
+                <div ref={containerRef}>
+                    <ul className={style.list}>
+                        { btnsArray.map((item) => {
+                            return <li className={style.listElem}>
+                                        <NavButton text={item.text} target={item.target} type={item.type} />
+                                    </li>
+                        }) }
+                    </ul>
+                </div>
+            </CSSTransition>                         
         </div>
     )
 }

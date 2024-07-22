@@ -40,3 +40,27 @@
 .listElem:hover .secNavBtn{
     background-color: rgba(47, 79, 79, 0.90);
 }
+
+.containerEnter {
+    overflow: hidden;
+    max-height: 0;
+}
+
+.containerEnterActive {
+    max-height: 100vh;
+    transition: max-height 700ms ease-in-out;
+}
+
+.containerActiveDone {
+    max-height: 100vh;
+}
+
+.containerExit {
+    max-height: 100vh;
+}
+
+.containerExitActive {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 700ms ease-in-out;
+}
