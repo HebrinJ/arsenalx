@@ -1,12 +1,7 @@
 import { BtnTypes } from '../../utils/btnTypes';
 import style from './navButton.module.css'
 import { NavLink } from 'react-router-dom';
-
-type TBtnProps = {
-    text: string,
-    target: string,
-    type: BtnTypes,
-}
+import { TBtnProps } from './types';
 
 export default function NavButton({ text, target, type }: TBtnProps): JSX.Element {
 
