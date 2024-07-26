@@ -28,14 +28,11 @@ export default function DropDownBtn({ text, btnsArray }: TDDBtnProps): JSX.Eleme
                 classNames={{ 
                     enter: style.containerEnter,
                     enterActive: style.containerEnterActive,
-                    enterDone: style.containerEnterDone,
                     exit: style.containerExit,
                     exitActive: style.containerExitActive,
-                    exitDone: style.containerExitDone,
                 }}
                 nodeRef={containerRef}
-                timeout={700} 
-                mountOnEnter 
+                timeout={700}
                 unmountOnExit>
                 <div ref={containerRef}>
                     <ul className={style.list}>

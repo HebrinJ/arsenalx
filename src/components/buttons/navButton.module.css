@@ -1,10 +1,15 @@
+:root {
+    --btn-Height: 50px;
+    --sec-Armor: 3;  /* Количество кнопок в подменю Бронетехника*/
+}
+
 .mainNavBtn {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     width: 200px;
-    min-height: 50px;
+    min-height: var(--btn-Height, 50px);
     background-color: olive;
     color: white;
     border: none;
@@ -13,7 +18,7 @@
 }
 
 .mainNavBtn:hover {
-    background-color: rgba(218, 219, 219, 0.805);
+    background-color: rgba(128, 128, 0, 0.805);
 }
 
 .secNavBtn {
@@ -51,20 +56,17 @@
 }
 
 .containerEnterActive {
-    max-height: 100vh;
+    /* max-height: 100vh; */
+    max-height: calc(var(--btn-Height) * var(--sec-Armor));
     transition: max-height 700ms ease-in-out;
-}
-
-.containerActiveDone {
-    max-height: 100vh;
 }
 
 .containerExit {
-    max-height: 100vh;
+    overflow: hidden;
+    max-height: 150px;
 }
 
-.containerExitActive {
-    overflow: hidden;
+.containerExitActive {    
     max-height: 0;
-    transition: max-height 700ms ease-in-out;
+    transition: max-height 700ms ease;
 }
