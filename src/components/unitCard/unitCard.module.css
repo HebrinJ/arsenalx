@@ -10,6 +10,16 @@
     box-sizing: border-box;    
 }
 
+.container:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.container:not(:hover) {
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
 .image {
     width: 250px;
     height: 100px;

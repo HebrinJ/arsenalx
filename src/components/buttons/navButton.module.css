@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.mainNavBtn:hover {
+    background-color: rgba(218, 219, 219, 0.805);
+}
+
 .secNavBtn {
     display: flex;
     align-items: center;
