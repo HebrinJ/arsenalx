@@ -32,7 +32,7 @@ export default function DropDownBtn({ text, btnsArray }: TDDBtnProps): JSX.Eleme
                     exitActive: style.containerExitActive,
                 }}
                 nodeRef={containerRef}
-                timeout={700}
+                timeout={300}
                 unmountOnExit>
                 <div ref={containerRef}>
                     <ul className={style.list}>

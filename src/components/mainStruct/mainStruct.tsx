@@ -4,12 +4,14 @@ import MainContent from "../mainContent/mainContent";
 import { NavPanel } from "../navPanel/navPanel";
 import PageContainer from "../pageContainer/pageContainer";
 import style from './mainStruct.module.css'
+import { ActionPanel } from "../actionPanel/actionPanel";
 
 export default function MainStruct() {
     return (
         <>
             <PageContainer>
                 <Header />
+                <ActionPanel />
                 <div className={style.bodyBox}>
                     <NavPanel />
                     <Outlet />
