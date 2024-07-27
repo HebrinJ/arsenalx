@@ -25,6 +25,7 @@ export function NavPanel() {
     ]
 
     return (
+        <div className={style.navigationBackground}>
         <nav className={style.navigationBox}>
             <ul className={style.list}>
                 <li className={style.listElem}>
@@ -38,5 +39,6 @@ export function NavPanel() {
                 </li>
             </ul>
         </nav>
+        </div>
     )
 }

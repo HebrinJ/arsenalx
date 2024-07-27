@@ -1,6 +1,8 @@
 :root {
     --btn-Height: 50px;
     --sec-Armor: 3;  /* Количество кнопок в подменю Бронетехника*/
+    --sec-Air: 3;  /* Количество кнопок в подменю Авиация*/
+    --sec-Ships: 3;  /* Количество кнопок в подменю Корабли*/
 }
 
 .mainNavBtn {
@@ -8,7 +10,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 200px;
+    width: 300px;
     min-height: var(--btn-Height, 50px);
     background-color: olive;
     color: white;
@@ -18,7 +20,7 @@
 }
 
 .mainNavBtn:hover {
-    background-color: rgba(128, 128, 0, 0.805);
+    background-color: rgba(187, 187, 27);
 }
 
 .secNavBtn {
@@ -26,7 +28,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 200px;
+    width: 300px;
     height: 50px;
     background-color: darkslategray;
     color: white;

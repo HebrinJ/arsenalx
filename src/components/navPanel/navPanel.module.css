@@ -1,7 +1,12 @@
+.navigationBackground {
+    background-color: olive;
+    height: 100vh;    
+}
+
 .navigationBox {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    min-width: 300px;
     justify-content: flex-start;
 }
 

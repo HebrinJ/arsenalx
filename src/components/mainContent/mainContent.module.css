@@ -6,7 +6,8 @@
     flex-wrap: wrap;
     gap: 25px;
     padding: 25px;
-    width: 1000px;
-    height: 500px;
-    background-color: wheat;    
+    width: 1620px;
+    height: 100vh;
+    background: linear-gradient(90deg, #dfd4b0, #e2d8b7);
+    box-sizing: border-box; 
 }
