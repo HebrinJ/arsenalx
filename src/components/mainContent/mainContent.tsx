@@ -4,12 +4,12 @@ import style from './mainContent.module.css'
 export default function MainContent() {
     return (
         <div className={style.contentBox}>
-            <UnitCard />
-            <UnitCard />
-            <UnitCard />
-            <UnitCard />
-            <UnitCard />
-            <UnitCard />
+            <UnitCard id='1'/>
+            <UnitCard id='1'/>
+            <UnitCard id='1'/>
+            <UnitCard id='1'/>
+            <UnitCard id='1'/>
+            <UnitCard id='1'/>
         </div>
     )
 }
