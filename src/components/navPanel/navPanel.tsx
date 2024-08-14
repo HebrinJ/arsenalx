@@ -29,6 +29,9 @@ export function NavPanel() {
         <nav className={style.navigationBox}>
             <ul className={style.list}>
                 <li className={style.listElem}>
+                    <NavButton text={'НА ГЛАВНУЮ'} target='/' type={BtnTypes.MAIN_NAV} />
+                </li>
+                <li className={style.listElem}>
                     <DropDownBtn text={'БРОНЕТЕХНИКА'} btnsArray={armorVehicles} />
                 </li>
                 <li className={style.listElem}>

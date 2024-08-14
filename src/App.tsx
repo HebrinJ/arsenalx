@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path={'/'} element={<MainStruct />}>
           <Route path={'/'} element={<MainContent />} />
-          <Route path={'/:id'} element={<UnitPage />} />
+          <Route path={'/item/:id'} element={<UnitPage />} />
         </Route>
       </Routes>
     </>

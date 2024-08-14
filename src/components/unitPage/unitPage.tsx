@@ -1,5 +1,6 @@
 import { mockArmor } from "../../mock/mockData";
 import { TitleImage } from "../titleImage/titleImage";
+import { UnitDescription } from "../unitDescription/unitDescription";
 import { UnitTable } from "../unitTable/unitTable";
 import style from './unitPage.module.css';
 
@@ -11,6 +12,7 @@ export function UnitPage() {
         <div className={style.container}>
             <TitleImage imageLink={unitData.mainImage} />
             <UnitTable unitData={unitData}/>
+            <UnitDescription description={unitData.description} />
         </div>
     )
 }
