@@ -58,7 +58,6 @@
 }
 
 .containerEnterActive {
-    /* max-height: 100vh; */
     max-height: calc(var(--btn-Height) * var(--sec-Armor));
     transition: max-height 300ms ease-in-out;
 }
