@@ -5,7 +5,7 @@ import headerImg from './images/headerImg.png'
 export function Header() {
     return (
         <div className={style.headerBox}>
-            <img src={headerImg} alt='Шапка сайта'/>
+            <img className={style.headerImg} src={headerImg} alt='Шапка сайта'/>
         </div>
     )
 }
