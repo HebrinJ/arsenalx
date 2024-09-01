@@ -31,6 +31,7 @@ export default function DropDownBtn({ text, btnsArray }: TDDBtnProps): JSX.Eleme
                     exit: style.containerExit,
                     exitActive: style.containerExitActive,
                 }}
+                style={{"--btns-Qnt": btnsArray.length}}
                 nodeRef={containerRef}
                 timeout={300}
                 unmountOnExit>

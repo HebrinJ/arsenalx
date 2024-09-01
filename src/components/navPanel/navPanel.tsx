@@ -10,18 +10,28 @@ export function NavPanel() {
         { text: 'Танки', target: 'tanks', type: BtnTypes.SEC_NAV },
         { text: 'ББМ', target: 'bbm', type: BtnTypes.SEC_NAV },
         { text: 'САУ', target: 'sau', type: BtnTypes.SEC_NAV },
+        { text: 'РСЗО', target: 'mlrs', type: BtnTypes.SEC_NAV },
     ]
 
     const aircraft: Array<TBtnProps> = [
         { text: 'Истребители', target: 'fighters', type: BtnTypes.SEC_NAV },
         { text: 'Штурмовики', target: 'attack', type: BtnTypes.SEC_NAV },
         { text: 'Бомбардировщики', target: 'bombers', type: BtnTypes.SEC_NAV },
+        { text: 'Вспомогательные самолеты', target: 'airsupport', type: BtnTypes.SEC_NAV },
+        { text: 'Боевые вертолеты', target: 'b_helicopter', type: BtnTypes.SEC_NAV },
+        { text: 'Вспомогательные вертолеты', target: 's_helicopter', type: BtnTypes.SEC_NAV },
+        { text: 'Беспилотники', target: 'bpla', type: BtnTypes.SEC_NAV },
     ]
 
     const fleet: Array<TBtnProps> = [
-        { text: 'Линкоры', target: 'lines', type: BtnTypes.SEC_NAV },
-        { text: 'Корветы', target: 'corvette', type: BtnTypes.SEC_NAV },
-        { text: 'Фрегаты', target: 'fregates', type: BtnTypes.SEC_NAV },
+        { text: 'Боевые катера', target: 'speedboat', type: BtnTypes.SEC_NAV },
+        { text: 'Эсминцы', target: 'destroyer', type: BtnTypes.SEC_NAV },
+        { text: 'Миноносцы', target: 'mines', type: BtnTypes.SEC_NAV },
+        { text: 'Крейсеры', target: 'cruiser', type: BtnTypes.SEC_NAV },
+        { text: 'Линкоры и дредноуты', target: 'battleship', type: BtnTypes.SEC_NAV },
+        { text: 'Авианосцы и вертолетоносцы', target: 'carrier', type: BtnTypes.SEC_NAV },
+        { text: 'Суда обеспечения', target: 'sup_ship', type: BtnTypes.SEC_NAV },
+        { text: 'Подводные лодки', target: 'submarine', type: BtnTypes.SEC_NAV },
     ]
 
     return (

@@ -1,8 +1,6 @@
 :root {
     --btn-Height: 50px;
-    --sec-Armor: 3;  /* Количество кнопок в подменю Бронетехника*/
-    --sec-Air: 3;  /* Количество кнопок в подменю Авиация*/
-    --sec-Ships: 3;  /* Количество кнопок в подменю Корабли*/
+    --btns-Qnt: 0; /* Количество кнопок в разделе, устанавливается через dropDownBtn*/
 }
 
 .mainNavBtn {
@@ -58,7 +56,7 @@
 }
 
 .containerEnterActive {
-    max-height: calc(var(--btn-Height) * var(--sec-Armor));
+    max-height: calc(var(--btn-Height) * var(--btns-Qnt));
     transition: max-height 300ms ease-in-out;
 }
 
