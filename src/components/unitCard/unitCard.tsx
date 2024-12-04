@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import style from './unitCard.module.css';
 
 type TItemProps = {
@@ -17,6 +17,7 @@ export function UnitCard({ id, image, name }: TItemProps) {
     //         </div>
     //     </Link>
     // )
+
     return (
         <Link to={`/item/${id}`} state={id}>
             <div className={style.container}>

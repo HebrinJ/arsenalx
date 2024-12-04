@@ -1,29 +1,30 @@
 import { useEffect, useState } from "react";
-import { mockArmor } from "../../mock/mockData";
 import { TitleImage } from "../titleImage/titleImage";
 import { UnitDescription } from "../unitDescription/unitDescription";
 import { UnitTable } from "../unitTable/unitTable";
 import api from "../../utils/api";
 import style from './unitPage.module.css';
+import { useLocation } from "react-router-dom";
 
 export function UnitPage() {
 
-    const unitData = mockArmor;
+    const location = useLocation();
+    const id = location.state;
 
-    const [testInfo, setTestInfo] = useState('0');
+    const [unitData, setUnitData] = useState({mainImage: '', description: ''});
+
     useEffect(() => {
-        req();
+        getUnitData();
     }, [])
 
-    const req = async () => {
-        const result = await api.testGet();
-        setTestInfo(result.data)
+    const getUnitData = async () => {
+        const result = await api.getArmorData(id);
+        setUnitData(result)
     }
 
     return (
         <div className={style.container}>
             <TitleImage imageLink={unitData.mainImage} />
-            <p>{` ЭТО ПОЛУЧЕННЫЕ ДАННЫЕ ${testInfo}`}</p>
             <UnitTable unitData={unitData}/>
             <UnitDescription description={unitData.description} />
         </div>

@@ -16,36 +16,41 @@ export class Api {
       .then(getResponse)
     }
 
-    addItem() {
-      return fetch(`${this._address}/items`, {
-        method: 'POST',
-        body: JSON.stringify({
+    getArmorData(unitId: string) {
+      return fetch(`${this._address}/item/${unitId}`, {             
+           }).then(getResponse)
+    }
+
+    // addItem() {
+    //   return fetch(`${this._address}/items`, {
+    //     method: 'POST',
+    //     body: JSON.stringify({
           
-        }),
-      })
-      .then(getResponse)
-    }
+    //     }),
+    //   })
+    //   .then(getResponse)
+    // }
 
-    removeCard(itemId: string) {
-      return fetch(`${this._address}/cards/${itemId}`, {
-        method: 'DELETE',
-      }).then(getResponse)
-    }
+    // removeCard(itemId: string) {
+    //   return fetch(`${this._address}/cards/${itemId}`, {
+    //     method: 'DELETE',
+    //   }).then(getResponse)
+    // }
 
-    async testGet() {
-      const response = await fetch(`${this._address}/item/2`, {
-        method: 'GET',
-      })
+    // async testGet() {
+    //   const response = await fetch(`${this._address}/item/2`, {
+    //     method: 'GET',
+    //   })
       
-      if(response.ok) {
-        console.log('Успешный запрос')
-        return response.json();
-      } else {
-        console.log('Запрос с ошибкой')
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+    //   if(response.ok) {
+    //     console.log('Успешный запрос')
+    //     return response.json();
+    //   } else {
+    //     console.log('Запрос с ошибкой')
+    //     return Promise.reject(`Ошибка: ${response.status}`);
+    //   }
       
-    }
+    // }
   
   }
 
