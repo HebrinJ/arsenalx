@@ -30,9 +30,25 @@ export class Api {
       return fetch(`${this._address}/cards/${itemId}`, {
         method: 'DELETE',
       }).then(getResponse)
-    }   
+    }
+
+    async testGet() {
+      const response = await fetch(`${this._address}/item/2`, {
+        method: 'GET',
+      })
+      
+      if(response.ok) {
+        console.log('Успешный запрос')
+        return response.json();
+      } else {
+        console.log('Запрос с ошибкой')
+        return Promise.reject(`Ошибка: ${response.status}`);
+      }
+      
+    }
   
   }
 
   // Заменить на адрес бэкенда
-  const api = new Api('https://url.ru');
+  const api = new Api('http://localhost:3001');
+  export default api;
