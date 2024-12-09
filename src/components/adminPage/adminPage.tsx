@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { mockArmor } from "../../mock/mockData";
 import { TitleImage } from "../titleImage/titleImage";
 import { UnitDescription } from "../unitDescription/unitDescription";
 import { UnitTable } from "../unitTable/unitTable";
@@ -8,8 +7,6 @@ import style from './adminPage.module.css';
 import { UnitTypes } from "../../utils/unitTypes";
 
 export function AdminPage() {
-
-    const unitData = mockArmor;
 
     const [unitType, setUnitType] = useState();
 
