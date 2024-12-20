@@ -4,7 +4,7 @@ type TTitleImageProps = {
     imageLink: string;
 }
 
-export function TitleImage({ imageLink }: TTitleImageProps) {
+export function TitleImage({ imageLink = ''}: TTitleImageProps) {
 
     return (
         <img className={style.imageBox} src={imageLink} alt={'test'} />

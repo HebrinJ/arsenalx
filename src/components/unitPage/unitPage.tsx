@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { TitleImage } from "../titleImage/titleImage";
 import { UnitDescription } from "../unitDescription/unitDescription";
-import { UnitTable } from "../unitTable/unitTable";
 import api from "../../utils/api";
 import style from './unitPage.module.css';
 import { useLocation } from "react-router-dom";
+import { TransformUnitData, TRawUnitDataObject, TTransformedUnitData } from "../../utils/transformUnitData";
+import { TableCreator } from "../tableParts/tableCreator";
 
 export function UnitPage() {
 
     const location = useLocation();
     const id = location.state;
 
-    const [unitData, setUnitData] = useState({mainImage: '', description: ''});
+    const [rawUnitData, setRawUnitData] = useState<TRawUnitDataObject>({});
+    const [labelData, setLabelData] = useState({mainImage: '', description: ''})
 
     useEffect(() => {
         getUnitData();
@@ -19,14 +21,15 @@ export function UnitPage() {
 
     const getUnitData = async () => {
         const result = await api.getArmorData(id);
-        setUnitData(result)
+        setRawUnitData(result)
+        setLabelData({mainImage: result.mainImage, description: result.description});
     }
 
     return (
         <div className={style.container}>
-            <TitleImage imageLink={unitData.mainImage} />
-            <UnitTable unitData={unitData}/>
-            <UnitDescription description={unitData.description} />
+            <TitleImage imageLink={labelData.mainImage} />
+            <TableCreator tableData={TransformUnitData(rawUnitData)} />
+            <UnitDescription description={labelData.description} />
         </div>
     )
 }

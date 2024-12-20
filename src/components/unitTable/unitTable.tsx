@@ -1,11 +1,15 @@
 import { ArmorTable } from "../armorTable/armorTable";
+import { TableCreator } from "../tableParts/tableCreator";
 
-export function UnitTable({unitData}: any) {
+// export function UnitTable(unitData: TTableData) {
 
-    switch (unitData.type) {
-        case 'armor':
-            return <ArmorTable unitData={unitData}/>;  
-        default:
-            return <></>
-    }
-}
+
+    
+//     switch (unitData.type) {
+//         case 'armor':
+//             //return <ArmorTable unitData={unitData}/>;  
+//             //return <TableCreator tableData={unitData} />
+//         default:
+//             return <></>
+//     }
+// }

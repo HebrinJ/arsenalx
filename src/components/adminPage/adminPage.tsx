@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { TitleImage } from "../titleImage/titleImage";
 import { UnitDescription } from "../unitDescription/unitDescription";
-import { UnitTable } from "../unitTable/unitTable";
 import api from "../../utils/api";
 import style from './adminPage.module.css';
 import { UnitTypes } from "../../utils/unitTypes";
