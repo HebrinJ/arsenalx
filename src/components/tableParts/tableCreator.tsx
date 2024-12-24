@@ -1,26 +1,26 @@
+import { useEffect, useState } from 'react'
 import { TTransformedUnitData, TTransformedUnitDataField } from '../../utils/transformUnitData'
-import style from './tableCreator.module.css'
+import { splitUnitDataToBlocks } from '../../utils/splitToBlocks';
+import { TableBlock } from './tableBlock';
 
 type TTableCreatorProps = {
     tableData: TTransformedUnitData,
 }
 
+type TDataBlocks = Array<Array<TTransformedUnitDataField>>;
+
 export function TableCreator({ tableData }: TTableCreatorProps): JSX.Element {    
 
-    return (
-        <table className={style.table}>
-            {tableData.map((item) => {
+    const [dataBlocks, setDataBlocks] = useState<TDataBlocks>([]);
 
-                const label = Object.keys(item)[0];
-                const data = item[label];
+    useEffect(() => {
+        const splittedData = splitUnitDataToBlocks(tableData);
+        setDataBlocks(splittedData);
+    },[tableData])
 
-                return (
-                    <tr>
-                        <td>{label}</td>
-                        <td>{data}</td>
-                    </tr> 
-                )
-            })}                       
-        </table>
-    )
+    return (<>
+            {dataBlocks.map((block: Array<TTransformedUnitDataField>) => (
+                <TableBlock block={block}/>
+            ))}        
+    </>)
 }
