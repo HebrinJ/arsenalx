@@ -29,5 +29,10 @@
 
 .label {
     margin: 0;
-    text-align: center;
+    text-align: center;    
+}
+
+.link {
+    color: black;
+    text-decoration: none;
 }

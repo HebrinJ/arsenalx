@@ -2,6 +2,7 @@ import { UnitCard } from '../unitCard/unitCard'
 import style from './mainContent.module.css'
 import api from '../../utils/api'
 import { useEffect, useState } from 'react'
+import { ARMOR, BBM } from '../../constants/unitTypeConstants'
 
 type TCardList = [
     {
@@ -12,7 +13,7 @@ type TCardList = [
         company: string;
         country: string;
         image: string;
-        name: string;
+        unitName: string;
     }    
 ]
 
@@ -21,7 +22,7 @@ type TMainContentProps = {
     type: string;
 }
 
-export default function MainContent({ group, type }: TMainContentProps): JSX.Element {
+export default function MainContent({ group = ARMOR, type = BBM }: TMainContentProps): JSX.Element {
 
     const [cardList, setCardList] = useState<TCardList>([{
         id: "0",
@@ -31,22 +32,23 @@ export default function MainContent({ group, type }: TMainContentProps): JSX.Ele
         company: "none",
         country: "none",
         image: "none",
-        name: "none",
+        unitName: "none",
     }])    
 
     useEffect(() => {
+        const getData = async () => {
+            const cards = await api.getCardListByType(type)
+            setCardList(cards);            
+        }
+
         getData();
-    }, [])
-    
-    async function getData() {
-        setCardList(await api.getCardListByType(type));
-    }
+    }, [type])
 
     return (
         <div className={style.contentBox}>
-            {cardList.map((unit) => {
-                if(unit.group === group.toString() && unit.type === type.toString()) {
-                    return (<UnitCard id={unit.id} image={unit.image} name={unit.name}/>)
+            {cardList.map((card) => {
+                if(card.group === group && card.type === type) {
+                    return (<UnitCard id={card.id} image={card.image} name={card.unitName}/>)
                 }
             })}            
         </div>

@@ -9,7 +9,7 @@ export default function App() {
     <>
       <Routes>
         <Route path={'/'} element={<MainStruct />}>
-          <Route path={'/'} element={<MainContent group={ARMOR} type={TANK} />} />
+          <Route path={'/'} element={<MainContent group={ARMOR} type={BBM} />} />
           <Route path={'/list/tanks'} element={<MainContent group={ARMOR} type={TANK} />} />
           <Route path={'/list/bbm'} element={<MainContent group={ARMOR} type={BBM} />} />
           <Route path={'/item/:id'} element={<UnitPage />} />
