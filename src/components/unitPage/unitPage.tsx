@@ -20,9 +20,9 @@ export function UnitPage() {
     }, [])
 
     const getUnitData = async () => {
-        const result = await api.getArmorData(id);
-        setRawUnitData(result)
-        setLabelData({mainImage: result.mainImage, description: result.description});
+        // const result = await api.getArmorData(id);
+        // setRawUnitData(result)
+        // setLabelData({mainImage: result.mainImage, description: result.description});
     }
 
     return (

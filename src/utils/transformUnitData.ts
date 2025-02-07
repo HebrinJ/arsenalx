@@ -11,7 +11,7 @@ export type TTransformedUnitDataField = {
 
 export type TTransformedUnitData = Array<TTransformedUnitDataField> | []
 
-const fieldsToRemove = ['id', 'type', 'description', 'mainImage'];
+const fieldsToRemove = ['id', 'group', 'type', 'description', 'mainImage'];
 
 export function TransformUnitData(incomingUnitData: TRawUnitDataObject): TTransformedUnitData {
     const transformedData: Array<TTransformedUnitDataField> = [];

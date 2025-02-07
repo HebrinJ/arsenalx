@@ -1,4 +1,4 @@
-import { BtnTypes } from '../../utils/btnTypes';
+import { BtnTypes } from '../../types/btnTypes';
 
 export type TBtnProps = {
     text: string,

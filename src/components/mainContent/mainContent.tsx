@@ -2,7 +2,6 @@ import { UnitCard } from '../unitCard/unitCard'
 import style from './mainContent.module.css'
 import api from '../../utils/api'
 import { useEffect, useState } from 'react'
-import { UnitGroup, UnitTypes } from '../../utils/unitTypes'
 
 type TCardList = [
     {
@@ -18,8 +17,8 @@ type TCardList = [
 ]
 
 type TMainContentProps = {
-    group: UnitGroup;
-    type: UnitTypes;
+    group: string;
+    type: string;
 }
 
 export default function MainContent({ group, type }: TMainContentProps): JSX.Element {
@@ -40,7 +39,7 @@ export default function MainContent({ group, type }: TMainContentProps): JSX.Ele
     }, [])
     
     async function getData() {
-        setCardList(await api.getCardList())
+        setCardList(await api.getCardListByType(type));
     }
 
     return (

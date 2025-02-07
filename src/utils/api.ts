@@ -11,15 +11,10 @@ export class Api {
       this._address = address;
     }
 
-    getCardList() {
-      return fetch(`${this._address}/allitems`)
+    async getCardListByType(type: string) {
+      return await fetch(`${this._address}/list/${type}`)
       .then(getResponse)
-    }
-
-    getArmorData(unitId: string) {
-      return fetch(`${this._address}/item/${unitId}`, {             
-           }).then(getResponse)
-    }
+    }    
 
     // addItem() {
     //   return fetch(`${this._address}/items`, {

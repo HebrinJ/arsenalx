@@ -1,4 +1,4 @@
-import { BtnTypes } from '../../utils/btnTypes'
+import { BtnTypes } from '../../types/btnTypes'
 import DropDownBtn from '../buttons/dropDownBtn'
 import NavButton from '../buttons/navButton'
 import style from './navPanel.module.css'
@@ -7,8 +7,8 @@ import { TBtnProps } from '../buttons/types'
 export function NavPanel() {
 
     const armorVehicles: Array<TBtnProps> = [
-        { text: 'Танки', target: 'armor/tanks', type: BtnTypes.SEC_NAV },
-        { text: 'ББМ', target: 'armor/bbm', type: BtnTypes.SEC_NAV },
+        { text: 'Танки', target: 'list/tanks', type: BtnTypes.SEC_NAV },
+        { text: 'ББМ', target: 'list/bbm', type: BtnTypes.SEC_NAV },
         { text: 'САУ', target: 'armor/sau', type: BtnTypes.SEC_NAV },
         { text: 'РСЗО', target: 'armor/mlrs', type: BtnTypes.SEC_NAV },
     ]

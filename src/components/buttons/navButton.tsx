@@ -1,4 +1,4 @@
-import { BtnTypes } from '../../utils/btnTypes';
+import { BtnTypes } from '../../types/btnTypes';
 import style from './navButton.module.css'
 import { NavLink } from 'react-router-dom';
 import { TBtnProps } from './types';
